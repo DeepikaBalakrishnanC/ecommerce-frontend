@@ -1,3 +1,12 @@
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
+
 const productGrid = document.getElementById("productGrid");
 const loadingText = document.getElementById("loading");
 const errorText = document.getElementById("error");
@@ -72,3 +81,18 @@ alert("Added to cart!");
 
 // Call API
 fetchProducts();
+
+const authLinks = document.querySelector(".auth-links");
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (authLinks && user) {
+    authLinks.innerHTML = `
+        <span>Hi, ${user.name}</span>
+        <button onclick="logout()">Logout</button>
+    `;
+}
+
+function logout() {
+    localStorage.removeItem("user");
+    location.reload();
+}

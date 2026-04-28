@@ -373,3 +373,37 @@
     padding: 5px 10px;
     cursor: pointer;
 }
+
+/* AUTH FORMS */
+.auth {
+    max-width: 350px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.auth input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.auth button {
+    padding: 10px;
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-links {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}

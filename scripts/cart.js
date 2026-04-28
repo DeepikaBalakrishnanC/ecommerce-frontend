@@ -29,6 +29,7 @@ function addItemToCart(product) {
     }
 
     saveCart(cart);
+    loadCart();
 }
 
 // Count total items
