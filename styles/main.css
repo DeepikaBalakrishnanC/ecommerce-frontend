@@ -304,3 +304,37 @@
         height: 200px;
     }
 }
+
+/* Image Zoom */
+.image-container {
+    overflow: hidden;
+    width: 300px;
+}
+
+.image-container img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Variations */
+.variations {
+    margin: 15px 0;
+}
+
+.variations select {
+    margin: 5px;
+    padding: 5px;
+}
+
+/* Quantity */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.quantity button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
