@@ -45,7 +45,7 @@ products.forEach(product => {
 
     card.innerHTML = `
         <a href="product.html?id=${product.id}">
-            <img src="${product.image}" alt="${product.title}">
+            <img src="${product.image}" alt="${product.title}" loading="lazy">
             <h3>${product.title.substring(0, 40)}...</h3>
         </a>
         <p>$${product.price}</p>
