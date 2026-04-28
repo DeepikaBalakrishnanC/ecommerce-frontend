@@ -248,3 +248,12 @@
         grid-template-columns: 1fr;
     }
 }
+
+#loading {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#error {
+    margin-top: 10px;
+}

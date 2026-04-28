@@ -6,14 +6,31 @@
 // });
 
 const productGrid = document.getElementById("productGrid");
+const loadingText = document.getElementById("loading");
+const errorText = document.getElementById("error");
 
-// Fetch products from API
-fetch("https://fakestoreapi.com/products")
-    .then(res => res.json())
-    .then(data => {
+// Fetch products
+async function fetchProducts() {
+    try {
+        loadingText.style.display = "block";
+
+        const response = await fetch("https://fakestoreapi.com/products");
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch products");
+        }
+
+        const data = await response.json();
+
+        loadingText.style.display = "none";
+
         displayProducts(data);
-    })
-    .catch(err => console.log(err));
+    } catch (error) {
+        loadingText.style.display = "none";
+        errorText.textContent = "Error loading products. Please try again.";
+        console.error(error);
+    }
+}
 
 function displayProducts(products) {
     productGrid.innerHTML = "";
@@ -23,7 +40,7 @@ function displayProducts(products) {
         card.classList.add("product-card");
 
         card.innerHTML = `
-            <img src="${product.image}" alt="${product.title}">
+            <img src="${product.image}" alt="${product.title}" loading="lazy">
             <h3>${product.title.substring(0, 40)}...</h3>
             <p>$${product.price}</p>
             <button onclick="addToCart()">Add to Cart</button>
@@ -33,7 +50,10 @@ function displayProducts(products) {
     });
 }
 
-// Basic cart function
+// Call function
+fetchProducts();
+
+// Cart function
 function addToCart() {
     alert("Product added to cart!");
 }
