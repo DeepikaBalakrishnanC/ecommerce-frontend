@@ -40,11 +40,13 @@ function displayProducts(products) {
         card.classList.add("product-card");
 
         card.innerHTML = `
-            <img src="${product.image}" alt="${product.title}" loading="lazy">
-            <h3>${product.title.substring(0, 40)}...</h3>
-            <p>$${product.price}</p>
-            <button onclick="addToCart()">Add to Cart</button>
-        `;
+    <a href="product.html?id=${product.id}">
+        <img src="${product.image}" alt="${product.title}">
+        <h3>${product.title.substring(0, 40)}...</h3>
+    </a>
+    <p>$${product.price}</p>
+    <button onclick="addToCart(${product.id})">Add to Cart</button>
+`;
 
         productGrid.appendChild(card);
     });
