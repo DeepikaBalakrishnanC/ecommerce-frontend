@@ -5,6 +5,41 @@
     box-sizing: border-box;
 }
 
+/* CART PAGE */
+.cart-page {
+    padding: 30px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.qty {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.qty button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart-page button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
 /* Header */
 .header {
     display: flex;
