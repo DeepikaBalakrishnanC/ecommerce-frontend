@@ -99,25 +99,24 @@ function setupInteractions(product) {
 
     // Add to cart
     document.getElementById("addCartBtn").addEventListener("click", () => {
-        const size = document.getElementById("size").value;
-        const color = document.getElementById("color").value;
+    const size = document.getElementById("size").value;
+    const color = document.getElementById("color").value;
+    const quantity = parseInt(document.getElementById("qty").textContent);
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const productData = {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,
+        size,
+        color,
+        quantity
+    };
 
-        cart.push({
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            quantity,
-            size,
-            color,
-            image: product.image
-        });
+    addItemToCart(productData);
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        alert("Added to cart successfully!");
-    });
+    alert("Added to cart!");
+});
 
     setupZoom();
 }
